@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "yuseimagic";
+  src:
+    url('assets/fonts/yuseimagic/YuseiMagicLatinCore-Regular.woff2') format("woff2"),
+    url('assets/fonts/yuseimagic/YuseiMagicLatinCore-Regular.ttf') format('truetype');
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "prozalibre";
+  src:
+    url('assets/fonts/ProzaLibre/ProzaLibre-Medium.woff2') format("woff2");
+  font-display: fallback;
+}
+
+:root {
+  --r-link-color: #ea73ca;
+}
+
+.curve {
+  border-radius: 4px;
+}
+
+.glow {
+  border-color: #ff97fc;
+  border-style: solid;
+  border-width: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "yuseimagic" !important;
+}
+
+p {
+  font-family: "yuseimagic" !important;
+}
+
+hr {
+  border-color: white;
+  border-style: solid;
+}

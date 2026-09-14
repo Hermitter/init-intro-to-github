@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<title>Intro To GitHub</title>
+
+	<link rel="stylesheet" href="deps/dist/reset.css" />
+	<link rel="stylesheet" href="deps/dist/reveal.css" />
+	<link rel="stylesheet" href="deps/dist/theme/black.css" />
+
+	<link rel="stylesheet" href="styles.css" />
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="deps/dist/plugin/highlight/monokai.css" />
+
+	<style>
+		html {
+			background-color: #161122;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- TODO: have a QR code to the presentation so they can follow along in the technical part -->
+			<!-- The Layout of this talk is to explain the logic and then do a live demo to put it in practice -->
+
+			<!-- INTRO -->
+			<section data-background-color="#161122" data-auto-animate>
+				<h2 style="margin-bottom: 20px">Intro to</h2>
+				<img width=260 src="assets/imgs/github_logo.png">
+
+				<aside class="notes">
+					Survey crowd for Github familiarity.
+					<br />
+					Ask if they really know what it is and how it works.
+					<br />
+					Expecting most of the crowd not to know.
+				</aside>
+			</section>
+
+			<section class="r-stack" data-background-color="#161122" data-auto-animate>
+				<h2>Intro to</h2>
+				<br />
+				<img width=260 src="assets/imgs/github_logo.png">
+				<br />
+				<br />
+				<h2>But actually</h2>
+				<br />
+				<img width=260 src="assets/imgs/git_logo.png">
+
+				<aside class="notes">
+					Admit we've told a small lie because this is really a presentation on Git.
+				</aside>
+			</section>
+
+			<section class="r-stack" data-background-color="#161122" data-auto-animate>
+				<h2 class="">What is</h2>
+				<br />
+				<img width=260 src="assets/imgs/git_logo.png">
+				<h2 style="display:inline; vertical-align: top;">&MediumSpace;?</h2>
+
+				<aside class="notes">
+					Explain the common misconception people confuse Github for Git.
+					Highlight that GitHub is a hosting service for Git projects.
+				</aside>
+			</section>
+
+			<!-- Version Control Intro -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">Version Control?</h2>
+				<img style="margin-top: 20px;" class="curve glow" width=450 src="assets/imgs/s_version_control/bad.png">
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">Version Control</h2>
+				<img style="margin-top: 20px;" class="curve glow" width=450 src="assets/imgs/s_version_control/bad.png">
+				<img style="margin-top: 20px;" class="curve glow" width=450 src="assets/imgs/s_version_control/good.png">
+				<p style="margin-top: 0">Before / After</p>
+
+				<aside class="notes">
+					Explain this can be for any project and not just software ones.<br />
+					- writings, images, music, etc..<br />
+					Note: Git isn't great for projects with large files like video editing (hundreds of GB).
+				</aside>
+			</section>
+
+			<!-- Follow Along -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Follow Along</h3>
+
+				<img style="margin-top: 25px; margin-bottom: 0px;" class="curve glow" width=250 src="assets/imgs/qr_code.png">
+				<p style="font-size: 22px; margin-top: 0;">Link To Presentation (^ UPDATE THIS LINK!!!!)</p>
+
+				<ul>
+					<li><b>Git</b>: <a href="https://git-scm.com/install/">https://git-scm.com/install</a></li>
+					<li><b>VS Code</b>: <a href="https://code.visualstudio.com/download">
+							<a href="">https://code.visualstudio.com/download</a>
+					</li>
+					<li><b>Github Account</b>: <a href="https://github.com">
+							<a href="">https://github.com</a>
+					</li>
+				</ul>
+
+				<aside class="notes">
+					Don't stress on having everyone follow along.<br />
+					It's also helpful for them to just watch.<br />
+					Explain we're using VS Code's GUI to keep it simple, but they should at least learn the terminal commands.
+				</aside>
+			</section>
+
+			<!-- What's A Commit? -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">What's A Commit?</h2>
+				<img style="margin-top: 20px;" class="curve glow" width=350 src="assets/imgs/s_how_git_works/folder.png">
+				<p>It's a snapshot of changes</p>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">What's A Commit?</h2>
+				<div class="r-hstack">
+					<img style="margin-top: 20px;" class="curve glow" width=250 src="assets/imgs/s_how_git_works/folder.png">
+					<p>&rarr;</p>
+					<div
+						style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+						<ul
+							style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+							<li><b><u>ID</u></b>: 8a6df1</li>
+							<li><b><u>Previous Commit</u></b>: N/A</li>
+							<li><b><u>Message</u></b>: My First Upload</li>
+							<li><b><u>Author</u></b>: Jake</li>
+							<li><b><u>Date</u></b>: 09/21/2026</li>
+							<li><b><u>File Changes</u></b>: ...</li>
+							<li>...</li>
+						</ul>
+					</div>
+				</div>
+				<p>Think of it as a moment in history</p>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">What's A Commit?</h2>
+				<div class="r-hstack">
+					<div
+						style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+						<ul
+							style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+							<li><b><u>ID</u></b>: 8a6df1</li>
+							<li><b><u>Previous Commit</u></b>: N/A</li>
+							<li><b><u>Message</u></b>: My First Upload</li>
+							<li><b><u>Author</u></b>: Jake</li>
+							<li><b><u>Date</u></b>: 09/21/2026</li>
+							<li><b><u>File Changes</u></b>: ...</li>
+							<li>...</li>
+						</ul>
+					</div>
+					<p>&larr;</p>
+					<div
+						style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+						<ul
+							style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+							<li><b><u>ID</u></b>: 7h8dc2</li>
+							<li><b><u>Previous Commit</u></b>: 8a6df1</li>
+							<li><b><u>Message</u></b>: Changed logo</li>
+							<li><b><u>Author</u></b>: Jake</li>
+							<li><b><u>Date</u></b>: 09/22/2026</li>
+							<li><b><u>File Changes</u></b>: ...</li>
+							<li>...</li>
+						</ul>
+					</div>
+					<p>&larr;</p>
+					<div
+						style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+						<ul
+							style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+							<li><b><u>ID</u></b>: 3e6lh9</li>
+							<li><b><u>Previous Commit</u></b>: 7h8dc2</li>
+							<li><b><u>Message</u></b>: Fixed a typo</li>
+							<li><b><u>Author</u></b>: Jake</li>
+							<li><b><u>Date</u></b>: 09/22/2026</li>
+							<li><b><u>File Changes</u></b>: ...</li>
+							<li>...</li>
+						</ul>
+					</div>
+				</div>
+				<p>Add more and you have a timeline!</p>
+				<p style="font-size: 26px; margin: 0;">Each commit references its parent</p>
+			</section>
+
+			<!-- What's A Branch-->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">What's A Branch?</h2>
+				<div style="width: fit-content; margin: auto;">
+					<p style="margin: 0; padding:0; font-size: 16px; text-align: right">Branch: main</p>
+					<div style="width:fit-content; margin: auto; padding: 8px;" class="r-hstack glow">
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 8a6df1</li>
+								<li><b><u>Previous Commit</u></b>: N/A</li>
+								<li><b><u>Message</u></b>: My First Upload</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/21/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 7h8dc2</li>
+								<li><b><u>Previous Commit</u></b>: 8a6df1</li>
+								<li><b><u>Message</u></b>: Changed logo</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/22/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 3e6lh9</li>
+								<li><b><u>Previous Commit</u></b>: 7h8dc2</li>
+								<li><b><u>Message</u></b>: Fixed a typo</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/22/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p>A timeline is a branch</p>
+				<p style="font-size: 26px; margin: 0;">The default name is usually <u>main</u></p>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">What's A Branch?</h2>
+				<div style="width: fit-content; margin: auto;">
+					<p style="margin: 0; padding:0; font-size: 16px; text-align: right">Branch: main</p>
+					<div style="width:fit-content; margin: auto; padding: 8px;" class="r-hstack glow">
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 8a6df1</li>
+								<li><b><u>Previous Commit</u></b>: N/A</li>
+								<li><b><u>Message</u></b>: My First Upload</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/21/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 7h8dc2</li>
+								<li><b><u>Previous Commit</u></b>: 8a6df1</li>
+								<li><b><u>Message</u></b>: Changed logo</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/22/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 3e6lh9</li>
+								<li><b><u>Previous Commit</u></b>: 7h8dc2</li>
+								<li><b><u>Message</u></b>: Fixed a typo</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/22/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+					</div>
+					<p style="margin: 0; text-align: right;padding-right: 85px;">&uarr;</p>
+
+					<div class="r-hstack">
+						<p>You can have multiple!</p>
+						<div style="width: fit-content; margin-left: auto;">
+							<p style="margin: 0; padding:0; font-size: 16px; text-align: right">Branch: bring-back-typos</p>
+							<div style="width:fit-content; margin: auto; padding: 8px; border-color: #665fe8;" class="r-hstack glow">
+								<div
+									style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+									<ul
+										style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+										<li><b><u>ID</u></b>: 8d3gf6</li>
+										<li><b><u>Previous Commit</u></b>: 3e6lh9</li>
+										<li><b><u>Message</u></b>: Add more typos</li>
+										<li><b><u>Author</u></b>: Jake</li>
+										<li><b><u>Date</u></b>: 09/23/2026</li>
+										<li><b><u>File Changes</u></b>: ...</li>
+										<li>...</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h2 data-id="title">What's A Branch?</h2>
+				<div style="width: fit-content; margin: auto;">
+					<p style="margin: 0; padding:0; font-size: 16px; text-align: right">Branch: main</p>
+					<div style="width:fit-content; margin: auto; padding: 8px;" class="r-hstack glow">
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 8a6df1</li>
+								<li><b><u>Previous Commit</u></b>: N/A</li>
+								<li><b><u>Message</u></b>: My First Upload</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/21/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 7h8dc2</li>
+								<li><b><u>Previous Commit</u></b>: 8a6df1</li>
+								<li><b><u>Message</u></b>: Changed logo</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/22/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 3e6lh9</li>
+								<li><b><u>Previous Commit</u></b>: 7h8dc2</li>
+								<li><b><u>Message</u></b>: Fixed a typo</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/22/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+
+						<p>&larr;</p>
+						<div
+							style="padding-top: 10px; position:relative; width: 180px; height:180px; border-radius: 100%; border: #ea73ca 1px solid;  background-color:#1c1717">
+							<ul
+								style="list-style: none; text-align: center; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);  margin: 0; position: absolute; top: 50%; font-size: 14px;">
+								<li><b><u>ID</u></b>: 8d3gf6</li>
+								<li><b><u>Previous Commit</u></b>: 3e6lh9</li>
+								<li><b><u>Message</u></b>: Add more typos</li>
+								<li><b><u>Author</u></b>: Jake</li>
+								<li><b><u>Date</u></b>: 09/23/2026</li>
+								<li><b><u>File Changes</u></b>: ...</li>
+								<li>...</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<p>They can merge together!</p>
+			</section>
+
+
+			<!-- First Commit -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Making Your First Commit</h3>
+
+				<div>
+					<video class="curve glow" height=400 src="assets/imgs/s_first_commit/init.webm" data-autoplay loop></video>
+				</div>
+				<p>Add Git tracking to a folder</p>
+				<p style="font-size: 14px; margin: 0;">It will create a hidden .git folder</p>
+
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git init
+					</code>
+				</pre>
+
+				<aside class="notes">
+					Remember .git is a HIDDEN FOLDER. Some people won't see it.
+				</aside>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Making Your First Commit</h3>
+
+				<div>
+					<video class="curve glow" height=400 src="assets/imgs/s_first_commit/staging.webm" data-autoplay loop></video>
+				</div>
+				<p>Stage your changes</p>
+				<p style="font-size: 14px; margin: 0;">These are the file changes you plan to commit</p>
+
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git add .
+					</code>
+				</pre>
+
+				<aside class="notes">
+					Explain this is like being at the checkout line with your items.
+				</aside>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Making Your First Commit</h3>
+
+				<div>
+					<video class="curve glow" src="assets/imgs/s_first_commit/user_config.webm" data-autoplay loop></video>
+				</div>
+				<p>Set your username and email</p>
+				<p style="font-size: 14px; margin: 0;">Every commit you make will have an author</p>
+
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git config --global user.email "you@example.com"
+						$ git config --global user.name "Your Name"
+						# You can check with:
+						$ git config get user.name
+						$ git config get user.email
+					</code>
+				</pre>
+
+				<aside class="notes">
+					If staging is a checkout line, commits are when you checkout.
+					This is now a save point in your projects history.
+				</aside>
+			</section>
+
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Making Your First Commit</h3>
+
+				<div>
+					<video class="curve glow" height=400 src="assets/imgs/s_first_commit/commit.webm" data-autoplay loop></video>
+				</div>
+				<p>Now Commit!</p>
+				<p style="font-size: 14px; margin: 0;">This is now a snapshot you can always look back at</p>
+
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git commit -m "My first commit"
+					</code>
+				</pre>
+			</section>
+
+			<!-- Second Commit -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Making Your Second Commit</h3>
+
+				<div>
+					<video class="curve glow" height=420 src="assets/imgs/s_second_commit/commit.webm" data-autoplay loop></video>
+				</div>
+				<p style="font-size: 24px; margin: 0;">Use what you've learned and commit a new change</p>
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git add .
+						$ git commit -m "Add more exclamations"
+					</code>
+				</pre>
+			</section>
+
+			<!-- Merging A Branch -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Merging A Branch</h3>
+
+				<div>
+					<video class="curve glow" height=420 src="assets/imgs/s_merging_branches/commit.webm" data-autoplay
+						loop></video>
+				</div>
+				<p style="font-size: 24px; margin: 0;">Create a new branch, switch to it, and commit a change</p>
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git switch -c new-logo # -c creates the branch
+						$ git add .
+						$ git commit -m "Replace old logo"
+					</code>
+				</pre>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Merging A Branch</h3>
+				<div>
+					<video class="curve glow" height=420 src="assets/imgs/s_merging_branches/merge.webm" data-autoplay
+						loop></video>
+				</div>
+				<p style="font-size: 24px; margin: 0;">Switch back to main and merge the other branch </p>
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git switch main
+						$ git merge new-logo
+					</code>
+				</pre>
+			</section>
+
+			<!-- Merging Conflicts -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Merge Conflicts</h3>
+				TODO: later
+			</section>
+
+			<!-- Git Hosting -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Git Hosts</h3>
+				<img style="position: absolute; bottom: -66%; right: 20%; padding: 10px 15px 0 2px" height=230
+					src="assets/imgs/s_git_hosting/codeberg.png"></img>
+				<img height=60 src="assets/imgs/s_git_hosting/github.png"></img>
+				<img height=195 src="assets/imgs/s_git_hosting/gitlab.png"></img>
+				<img style="position: absolute; bottom: -96%; left: 30%; padding: 10px 15px 0 2px" height=70
+					src="assets/imgs/s_git_hosting/sourcehut.png"></img>
+				<img style="position: absolute; bottom: -56%; left: 10%; padding: 10px 15px 0 2px" height=110
+					src="assets/imgs/s_git_hosting/forgejo.png"></img>
+			</section>
+
+			<!-- Pushing To Github -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Pushing To Github</h3>
+				<div class="r-hstack" style="height:100%">
+					<img class="glow curve" style="margin-bottom: 5px;margin-right: 20px;" width=540
+						src="assets/imgs/s_pushing_to_github/new.png">
+					<img class="glow curve" style="margin-bottom: 5px;" width=790
+						src="assets/imgs/s_pushing_to_github/empty_repo.png">
+				</div>
+
+				<p style="margin-top: 5px; font-size: 24px; margin-bottom: 0;">Create a repository for your project</p>
+				<p style="font-size: 24px; margin: 0;">Visit <a href="https://github.com/new">https://github.com/new</a></p>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Pushing To Github</h3>
+				<div>
+					<video class="curve glow" src="assets/imgs/s_pushing_to_github/push.webm" data-autoplay loop></video>
+				</div>
+				<p style="font-size: 24px; margin: 0;">Push To Production!</p>
+				<p style="font-size: 14px; margin: 0;">VS Code will prompt you authenticate with Github</p>
+				<p style="font-size: 14px; margin: 0">(Note: Git authentication is normally done over <b><u>SSH</u></b>)</p>
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git push main
+						$ git merge new-logo
+					</code>
+				</pre>
+			</section>
+
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Pushing To Github</h3>
+				<p style="font-size: 24px; margin: 0; margin-top: -8px; font-style: italic;">Extras</p>
+				<div class="r-hstack" style="height:100%">
+					<div class="r-vstack">
+						<img class="glow curve" style="margin-bottom: 5px;margin-right: 20px;" width=540
+							src="assets/imgs/s_pushing_to_github/download.png">
+						<p style="text-align: center; font-size: 16px; margin: 0;">Downloading a repository is to clone</p>
+					</div>
+
+					<div class="r-vstack">
+						<img class="glow curve" style="margin-bottom: 5px;" width=790
+							src="assets/imgs/s_pushing_to_github/pull.png">
+						<p style="text-align: center; font-size: 16px; margin: 0;">Downloading the latest changes is to pull
+						</p>
+					</div>
+				</div>
+				<pre>
+					<code data-trim data-noescape class="language-bash">
+						$ git clone https://github.com/StimPick/my-project.git
+						$ git pull
+					</code>
+				</pre>
+			</section>
+
+			<!-- Finished! -->
+			<section class="" data-background-color="#161122" data-auto-animate>
+				<h3 data-id="title">Finished!</h3>
+				<img class="glow curve" style="margin-bottom: 5px;" src="assets/imgs/finished.gif">
+				<p style="text-align: center; font-size: 74px; margin: auto;">🎉🎉🎉🎉</p>
+			</section>
+
+
+		</div>
+	</div>
+
+	<script src="deps/dist/reveal.js"></script>
+	<script src="deps/dist/plugin/notes.js"></script>
+	<script src="deps/dist/plugin/markdown.js"></script>
+	<script src="deps/dist/plugin/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+		});
+	</script>
+</body>
+
+</html>
